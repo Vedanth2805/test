@@ -311,90 +311,14 @@ window.addEventListener("beforeunload", () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const addToCalendarBtn = document.getElementById("addToCalendarBtn");
-
-// addToCalendarBtn.addEventListener("click", async () => {
-//   const title = 'dinner'
-//   const date =  '2025-08-01'
-//   const time = '10:30'
-  
-//   const data = 'dinner 2025-08-01 10:30 1 hour'
-
-
-//   if (!title || !date || !time) {
-//     alert("Please fill in all fields.");
-//     return;
-//   }
-
-//   try {
-//     const response = await fetch(`/api/calender-event`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({title,date,time,data}),
-//     });
-
-//     const result = await response.json();
-//     alert(result.message || "Event sent to calendar!");
-//   } catch (error) {
-//     console.error("Calendar error:", error);
-//     alert("Failed to send event to calendar.");
-//   }
-// });
-
-
-
+// Add to calender feature
 
 const addToCalendarBtn = document.getElementById("addToCalendarBtn");
 
 addToCalendarBtn.addEventListener("click", async () => {
-  const data = 'dinner 2025-08-01 10:30pm  1 hour'; // You can dynamically create this
-
-  if (!extractedEventText.trim()) {
-    alert("No event text found. Please scan an image with event details.");
+    alert("Note: The Google Calendar feature currently works only with the developer's account. You can see a full demo of it in the video. Google login support coming soon!");
     return;
-  }
-
-
-  try {
-    const response = await fetch("/api/calender-event", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ data: extractedEventText }),  // Just one field: data
-    });
-
-    const result = await response.json();
-    alert(result.message || "Event sent to calendar!");
-  } catch (error) {
-    console.error("Calendar error:", error);
-    alert("Failed to send event to calendar.");
-  }
-});
-
-
-
+  })
 
 
 
